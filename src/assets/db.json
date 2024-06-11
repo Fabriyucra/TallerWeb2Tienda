@@ -1,0 +1,74 @@
+
+[
+    {
+      "id": 1,
+      "nombre_producto": "Funda de Silicona",
+      "descripcion": "Funda de silicona flexible y resistente para proteger tu celular.",
+      "precio": 10.99,
+      "imagen": "assets/img/funda1.jpg"
+    },
+    {
+      "id": 2,
+      "nombre_producto": "Cargador Inalámbrico",
+      "descripcion": "Cargador inalámbrico rápido compatible con todos los modelos de smartphones.",
+      "precio": 25.50,
+      "imagen": "assets/img/funda1.jpg"
+    },
+    {
+      "id": 3,
+      "nombre_producto": "Protector de Pantalla",
+      "descripcion": "Protector de pantalla de vidrio templado para evitar rayones y golpes.",
+      "precio": 7.99,
+      "imagen": "assets/img/funda1.jpg"
+    },
+    {
+      "id": 4,
+      "nombre_producto": "Auriculares Bluetooth",
+      "descripcion": "Auriculares Bluetooth con cancelación de ruido y alta calidad de sonido.",
+      "precio": 49.99,
+      "imagen": "assets/img/funda1.jpg"
+    },
+    {
+      "id": 5,
+      "nombre_producto": "Soporte para Auto",
+      "descripcion": "Soporte magnético para auto, fácil de instalar y ajustar.",
+      "precio": 15.00,
+      "imagen": "assets/img/funda1.jpg"
+    },
+    {
+      "id": 6,
+      "nombre_producto": "Power Bank 10000mAh",
+      "descripcion": "Batería externa de 10000mAh para cargar tu celular en cualquier lugar.",
+      "precio": 30.00,
+      "imagen": "assets/img/funda1.jpg"
+    },
+    {
+      "id": 7,
+      "nombre_producto": "Cable de Datos USB-C",
+      "descripcion": "Cable de datos USB-C de alta velocidad y durabilidad.",
+      "precio": 8.50,
+      "imagen": "assets/img/funda1.jpg"
+    },
+    {
+      "id": 8,
+      "nombre_producto": "Adaptador de Auriculares",
+      "descripcion": "Adaptador de auriculares para dispositivos sin conector de 3.5mm.",
+      "precio": 5.99,
+      "imagen": "assets/img/funda1.jpg"
+    },
+    {
+      "id": 9,
+      "nombre_producto": "Altavoz Bluetooth",
+      "descripcion": "Altavoz Bluetooth portátil con sonido estéreo y resistente al agua.",
+      "precio": 45.99,
+      "imagen": "assets/img/funda1.jpg"
+    },
+    {
+      "id": 10,
+      "nombre_producto": "Anillo Soporte",
+      "descripcion": "Anillo soporte para teléfono con rotación de 360 grados.",
+      "precio": 3.99,
+      "imagen": "assets/img/funda1.jpg"
+    }
+  ]
+  
