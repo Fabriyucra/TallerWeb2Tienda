@@ -7,7 +7,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username: string = '';
+  email: string = '';
   password: string = '';
   errorMessage: string = '';
   successMessage: string = '';
@@ -15,12 +15,12 @@ export class LoginComponent {
   constructor(private authService: AuthService) {}
 
   onSubmit() {
-    console.log(`Logging in user: ${this.username}`);
-    const message = this.authService.login(this.username, this.password);
+    console.log(`Logging in user: ${this.email}`);
+    const message = this.authService.login(this.email, this.password);
     if (message === 'Login successful') {
       this.successMessage = message;
       this.errorMessage = '';
-      console.log(`Login successful for user: ${this.username}`);
+      console.log(`Login successful for user: ${this.email}`);
     } else {
       this.errorMessage = message;
       this.successMessage = '';

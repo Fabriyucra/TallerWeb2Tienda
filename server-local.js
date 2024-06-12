@@ -23,12 +23,13 @@ app.get('/api/users/:id', (req, res) => {
 });
 
 // Endpoint para crear un nuevo usuario
-app.post('/api/users', (req, res) => {
+app.post('/register', (req, res) => {
   const newUser = req.body;
   newUser.id = users.length + 1;
   users.push(newUser);
   res.status(201).json(newUser);
 });
+
 
 // Endpoint para actualizar un usuario existente
 app.put('/api/users/:id', (req, res) => {

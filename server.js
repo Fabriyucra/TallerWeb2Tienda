@@ -71,6 +71,31 @@ app.post('/login', (req, res) => {
   });
 });
 
+// Ruta para confirmar la cuenta de un usuario en Cognito
+app.post('/confirm', (req, res) => {
+  const { email, code } = req.body;
+
+  if (!email || !code) {
+    return res.status(400).json({ error: 'Todos los campos son requeridos' });
+  }
+
+  const userData = {
+    Username: email,
+    Pool: userPool
+  };
+
+  const cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+
+  cognitoUser.confirmRegistration(code, true, (err, result) => {
+    if (err) {
+      console.error('Error al confirmar usuario en Cognito:', err);
+      return res.status(500).json({ error: 'Error al confirmar usuario en Cognito', details: err });
+    }
+    console.log('Confirmación exitosa:', result);
+    res.status(200).json({ message: 'Confirmación exitosa' });
+  });
+});
+
 // Iniciar el servidor
 app.listen(port, () => {
   console.log(`Servidor API iniciado en http://localhost:${port}`);
