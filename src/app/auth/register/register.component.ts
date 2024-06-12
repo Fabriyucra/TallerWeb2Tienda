@@ -16,16 +16,16 @@ export class RegisterComponent {
   constructor(private authService: AuthService) {}
 
   onSubmit() {
-    console.log(`Registering user: ${this.username}`);
+    console.log(`Registrando usuario: ${this.username}`);
     const message = this.authService.register(this.username, this.password, this.email);
-    if (message === 'Registration successful') {
+    if (message === 'Registro Exitoso') {
       this.successMessage = message;
       this.errorMessage = '';
-      console.log(`Registration successful for user: ${this.username}`);
+      console.log(`Registro Exitoso para el usuario: ${this.username}`);
     } else {
       this.errorMessage = message;
       this.successMessage = '';
-      console.log(`Registration failed: ${message}`);
+      console.log(`Detalles del Registro: ${message}`);
     }
   }
 }
