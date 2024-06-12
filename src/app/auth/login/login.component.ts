@@ -15,16 +15,18 @@ export class LoginComponent {
   constructor(private authService: AuthService) {}
 
   onSubmit() {
-    console.log(`Logging in user: ${this.email}`);
-    const message = this.authService.login(this.email, this.password);
-    if (message === 'Login successful') {
-      this.successMessage = message;
-      this.errorMessage = '';
-      console.log(`Login successful for user: ${this.email}`);
-    } else {
-      this.errorMessage = message;
-      this.successMessage = '';
-      console.log(`Login failed: ${message}`);
-    }
+    this.authService.login(this.email, this.password).subscribe({
+      next: (response) => {
+        this.successMessage = 'Inicio de sesión exitoso';
+        this.errorMessage = '';
+        console.log('Inicio de sesión exitoso:', response);
+      },
+      error: (error) => {
+        this.errorMessage = 'Error al iniciar sesión';
+        this.successMessage = '';
+        console.error('Error al iniciar sesión:', error);
+      }
+    });
+    
   }
 }

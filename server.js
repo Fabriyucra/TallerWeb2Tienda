@@ -1,10 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const AmazonCognitoIdentity = require('amazon-cognito-identity-js');
 global.fetch = require('node-fetch');
 
 const app = express();
 const port = 3000;
+
+app.use(cors());
 
 // Configuración de Cognito
 const poolData = {

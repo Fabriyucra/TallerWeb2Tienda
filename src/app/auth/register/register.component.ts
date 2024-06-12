@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -13,19 +14,23 @@ export class RegisterComponent {
   errorMessage: string = '';
   successMessage: string = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService,private router: Router) {}
 
   onSubmit() {
-    console.log(`Registrando usuario: ${this.username}`);
-    const message = this.authService.register(this.username, this.password, this.email);
-    if (message === 'Registro Exitoso') {
-      this.successMessage = message;
-      this.errorMessage = '';
-      console.log(`Registro Exitoso para el usuario: ${this.username}`);
-    } else {
-      this.errorMessage = message;
-      this.successMessage = '';
-      console.log(`Detalles del Registro: ${message}`);
-    }
+    this.authService.register(this.username, this.password, this.email).subscribe({
+      next: (response) => {
+        this.successMessage = 'Registro exitoso';
+        this.errorMessage = '';
+        console.log('Registro exitoso:', response);
+        this.router.navigate(['/confirm']);
+        console.log('Ir a validar registro:', response);
+      },
+      error: (error) => {
+        this.errorMessage = 'Error en el registro';
+        this.successMessage = '';
+        console.error('Error en el registro:', error);
+      }
+    });
+    
   }
 }
